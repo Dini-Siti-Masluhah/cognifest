@@ -28,7 +28,7 @@ const NavItems = () => {
             // label khusus admin
             const label =
               role === "admin" && link.label === "My Profile"
-                ? "Order"
+                ? "Dashboard"
                 : link.label;
 
             return (
