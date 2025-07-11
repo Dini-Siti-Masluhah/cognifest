@@ -24,16 +24,24 @@ const NavItems = () => {
       <ul className="flex flex-col gap-5 md:flex-row md:items-center md:gap-8 md:flex-nowrap">
         {headerLinks
           .filter((link) => link.roles.includes(role))
-          .map((link) => (
-            <li key={link.label}>
-              <Link
-                href={link.route}
-                className=" font-medium text-muted-foreground hover:text-primary transition-colors text-lg"
-              >
-                {link.label}
-              </Link>
-            </li>
-          ))}
+          .map((link) => {
+            // label khusus admin
+            const label =
+              role === "admin" && link.label === "My Profile"
+                ? "Order"
+                : link.label;
+
+            return (
+              <li key={link.label}>
+                <Link
+                  href={link.route}
+                  className="font-medium text-muted-foreground hover:text-primary transition-colors text-lg"
+                >
+                  {label}
+                </Link>
+              </li>
+            );
+          })}
       </ul>
     </div>
   );
