@@ -17,7 +17,12 @@ export const headerLinks = [
   {
     label: "My Profile",
     route: "/profile",
-    roles: ["admin", "user"], // semua user
+    roles: ["user"], // semua user
+  },
+  {
+    label: "Dashboard",
+    route: "/profile",
+    roles: ["admin"],// hanya admin
   },
 ];
 
